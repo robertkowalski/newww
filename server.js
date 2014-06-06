@@ -25,6 +25,7 @@ server.pack.require({
   'hapi-auth-cookie': null,
   './facets/company': null,
   './facets/registry': null,
+	'./facets/search': config.search,
   './facets/user': config.user,
   './services/hapi-couchdb': config.couch
 }, function(err) {
