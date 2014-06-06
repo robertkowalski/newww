@@ -9,7 +9,7 @@ module.exports = function(request, reply){
   client.search({
   fields : ['name', 'keywords','description','author','version', 'stars', 'dlScore', 'dlDay', 'dlWeek'],
   query :{ 
-         dis_max: {
+        "dis_max": {
         "tie_breaker": 0.7,
         "boost": 1.2,
         "queries": [
@@ -26,10 +26,10 @@ module.exports = function(request, reply){
           {
             "bool": {
               "should": [
-                {"match_phrase": {"name": params.q} },
-                {"match_phrase": {"keywords": params.q} },
-                {"match_phrase": {"description": params.q} },
-                {"match_phrase": {"readme": params.q} }
+                {"match_phrase": {"name": request.q} },
+                {"match_phrase": {"keywords": request.q} },
+                {"match_phrase": {"description": request.q} },
+                {"match_phrase": {"readme": request.q} }
               ],
               "minimum_should_match": 1,
               "boost": 50
@@ -39,7 +39,7 @@ module.exports = function(request, reply){
             "function_score": {
               "query": {
                 "multi_match": {
-                  "query": params.q,
+                  "query": request.q,
                   "fields": ["name^4", "keywords", "description", "readme"]
                 }
               },
@@ -61,7 +61,7 @@ module.exports = function(request, reply){
           }
         ]
       }
-  }, function (error, response){
+  }}, function (error, response){
    if (error) { 
       reply("error with elastic search"); //change this later, when I get the thign workign 
     return;
@@ -69,6 +69,6 @@ module.exports = function(request, reply){
     console.log(response.hits);
     reply.view("index", {
         hits: response.hits
-      });
-  });
+      });  
+});
 }
