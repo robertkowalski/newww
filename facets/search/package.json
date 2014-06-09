@@ -10,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "elasticsearch": "^2.2.0",
-    "handlebars-helper": "0.0.11"
+    "handlebars-helper": "0.0.11",
+    "lab": "^3.2.1"
   },
   "devDependencies": {
     "handlebars-helpers": "^0.5.5"
