@@ -68,7 +68,7 @@ module.exports = function(request, reply){
 
   client.search(searchQuery, function (error, response){
    if (error) { 
-      reply("error with elastic search"); //change this later, when I get the thign workign 
+      reply.view("index"); //change this later, when I get the thign workign 
       console.log(error); 
       return;
     }
@@ -79,4 +79,5 @@ module.exports = function(request, reply){
       hits: response.hits
     });  
   }); 
+
 }
