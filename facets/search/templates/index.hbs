@@ -4,7 +4,7 @@
  <ul class ="search-results" > 
   {{#each hits.hits}}
     <li class="search-result package">
-    <h2> <a href="{{ fields.name }}">{{ fields.name }} </a> </h2> {{! must figure out how to fix later }} 
+    <h2> <a href="/package/{{ fields.name }}">{{ fields.name }} </a> </h2> {{! must figure out how to fix later }} 
       <p>{{ fields.description }}</p>
       <p>
       <span class="author">{{ fields.author }}</span>
