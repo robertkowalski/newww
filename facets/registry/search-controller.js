@@ -68,14 +68,13 @@ module.exports = function(request, reply){
 
   client.search(searchQuery, function (error, response){
    if (error) { 
-      reply.view("index"); //change this later, when I get the thign workign 
-      console.log(error); 
+      reply.view("search"); 
       return;
     }
     console.log("showing results"); 
     console.log(response);
     console.log(response.hits);
-    reply.view("index", {
+    reply.view("search", {
       hits: response.hits
     });  
   }); 
