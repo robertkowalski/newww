@@ -64,8 +64,9 @@ module.exports = function(request, reply){
     }
   }
 };
+
   client.search(searchQuery, function (error, response){
-    if (error) { 
+   if (error) { 
       reply.view("search"); 
       return;
     }

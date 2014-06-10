@@ -12,7 +12,6 @@ var fakeSearch = require('./fixtures/fake-search.json'),
 registry.name = 'registry';
 registry.version = '0.0.1';
 
-//set up server
 before(function (done) { 
   var serverOptions  = { 
     views: {
