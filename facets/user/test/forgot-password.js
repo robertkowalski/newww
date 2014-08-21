@@ -1,8 +1,9 @@
 var Lab = require('lab'),
-    describe = Lab.experiment,
-    before = Lab.before,
-    after = Lab.after,
-    it = Lab.test,
+    lab = exports.lab = Lab.script(),
+    describe = lab.describe,
+    before = lab.before,
+    after = lab.after,
+    it = lab.it,
     expect = Lab.expect;
 
 var server, source, cache, tokenUrl, cookieCrumb,

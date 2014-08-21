@@ -1,8 +1,9 @@
-var Lab = require('lab')
-  , describe = Lab.experiment
-  , before = Lab.before
-  , it = Lab.test
-  , expect = Lab.expect;
+var Lab = require('lab'),
+    lab = exports.lab = Lab.script(),
+    describe = lab.describe,
+    before = lab.before,
+    it = lab.it,
+    expect = Lab.expect;
 
 var Hapi = require('hapi'),
     user = require('../facets/user'),

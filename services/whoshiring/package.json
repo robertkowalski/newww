@@ -12,6 +12,6 @@
     "deck": "0.0.4"
   },
   "devDependencies": {
-    "lab": "^3.2.1"
+    "lab": "^4.1.0"
   }
 }

@@ -1,7 +1,8 @@
 var Lab = require('lab'),
-    describe = Lab.experiment,
-    before = Lab.before,
-    it = Lab.test,
+    lab = exports.lab = Lab.script(),
+    describe = lab.describe,
+    before = lab.before,
+    it = lab.it,
     expect = Lab.expect;
 
 var server, p, source;

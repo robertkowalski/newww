@@ -1,24 +1,26 @@
 var Lab = require('lab'),
-    sinon = require('sinon'), 
-    elasticsearch = require('elasticsearch'),
-    describe = Lab.experiment,
-    before = Lab.before,
-    it = Lab.test,
+    lab = exports.lab = Lab.script(),
+    describe = lab.describe,
+    before = lab.before,
+    it = lab.it,
     expect = Lab.expect;
 
+
 var fakeSearch = require('./fixtures/fake-search.json'),
-    server; 
+    sinon = require('sinon'),
+    elasticsearch = require('elasticsearch'),
+    server;
 
 before(function (done) {
   server = require('./fixtures/setupServer')(done);
 });
 
-sinon.stub(elasticsearch, 'Client', function(){  
-  return { 
-    search: function(query, cb){ 
+sinon.stub(elasticsearch, 'Client', function(){
+  return {
+    search: function(query, cb){
       cb(null, fakeSearch)
     }
-  }; 
+  };
 });
 
 describe('Rendering the view', function () {

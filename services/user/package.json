@@ -14,7 +14,7 @@
     "murmurhash": "0.0.2"
   },
   "devDependencies": {
-    "lab": "^3.2.1",
+    "lab": "^4.1.0",
     "nock": "^0.42.1"
   }
 }
